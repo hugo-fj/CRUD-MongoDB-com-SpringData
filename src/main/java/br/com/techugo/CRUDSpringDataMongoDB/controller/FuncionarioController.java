@@ -30,4 +30,16 @@ public class FuncionarioController {
         return this.funcionarioService.criar(funcionario);
     }
 
+    @GetMapping("/intervalo")
+    public List<Funcionario> obterFuncionariosPorRangeDeIdade(
+            @RequestParam("de") Integer de,
+            @RequestParam("ate")Integer ate){
+        return this.funcionarioService.obterFuncionariosPorRangeDeIdade(de,ate);
+    }
+
+    @GetMapping("/nome")
+    public List<Funcionario> obterFuncionariosPorNome(
+            @RequestParam("nome") String nome) {
+        return this.funcionarioService.obterFuncionariosPorNome(nome);
+    }
 }

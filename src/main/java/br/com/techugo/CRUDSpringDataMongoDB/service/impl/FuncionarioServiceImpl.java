@@ -34,4 +34,12 @@ public class FuncionarioServiceImpl implements FuncionarioService {
         funcionario.setChefe(chefe);
         return this.funcionarioRepository.save(funcionario);
     }
+
+    public List<Funcionario> obterFuncionariosPorRangeDeIdade(Integer de, Integer ate){
+        return this.funcionarioRepository.obterFuncionariosPorRangeDeIdade(de,ate);
+    }
+
+    public List<Funcionario> obterFuncionariosPorNome(String nome){
+        return this.funcionarioRepository.findByNome(nome);
+    }
 }
